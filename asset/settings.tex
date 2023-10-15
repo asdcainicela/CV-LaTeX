@@ -1,0 +1,219 @@
+% Copyright 2023 Gerald Brandi Cainicela Aquino. 
+% Todos los derechos reservados. 
+% Contacto: gerald.cainicela.a@gmail.com
+
+
+% Configuración de hipervínculos
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+	pdftitle={\myName},
+	pdfpagemode=FullScreen,
+}
+
+% Definición de un color para las secciones
+\definecolor{colorSection}{HTML}{2C7ECB}
+
+% Configuración de la fuente y el estilo de las secciones utilizando el paquete sectsty
+\sectionfont{\color{colorSection}\large\bfseries}
+
+% Configuración de la apariencia de las secciones con el paquete titlesec
+\titleformat{\section} 
+{\color{colorSection}\Large\bfseries}
+{}
+{0em}
+{}[\color{colorSection}\titlerule]
+
+
+\newcommand{\siPerfil}{true}
+\newcommand{\noPerfil}{false}
+
+\newcommand{\miTitulo}[2]{%
+	\ifthenelse{\equal{#2}{\siPerfil}}{%
+		\begin{minipage}{0.76\textwidth}
+			\begin{flushleft} 
+				\textbf{\LARGE \MakeUppercase{\myName}}\\
+				\vspace{0.2cm}
+				\Large\  \textbf{\myDegree}
+			\end{flushleft}
+			\vspace{0.2cm}
+			#1
+		\end{minipage}%
+		\begin{minipage}{0.4\textwidth}
+			\begin{adjustwidth}{0.65cm}{}
+			\includegraphics[width=0.5\linewidth]{\perfil}
+			\end{adjustwidth}
+		\end{minipage}%
+	}{%
+		\ifthenelse{\equal{#2}{\noPerfil}}{%
+			\begin{flushleft} 
+				\textbf{\LARGE \MakeUppercase{\myName}}\\
+				\vspace{0.2cm}
+				\Large\  \textbf{\myDegree}
+			\end{flushleft}
+			\vspace{0.2cm}
+			#1
+		}{}%
+	}%
+}
+
+
+% Definición de un comando para la sección de datos personales
+\newcommand{\datosPersonalesSec}[1]{%
+	\section*{Datos Personales}
+	\begin{tabular}{p{3cm}p{12cm}}
+		#1
+	\end{tabular}
+}
+
+% Definición de un comando para la sección de formación académica
+\newcommand{\formacionAcademica}[5]{%
+	\begin{tabular}{p{11cm}p{10cm}}
+		\textbf{#1 } &  \\
+		\quad\textbf{  #2 } & #4- #5 \\
+		\qquad\textit{#3 } &  \\
+	\end{tabular}
+}
+
+ 
+
+% Definición de la función datosPersonales que toma tres argumentos y verifica si el segundo y tercer argumento son direcciones de correo electrónico o URL antes de formatearlos
+\newcommand{\datosPersonales}[3]{%
+	% Imprime el texto en negrita seguido del primer argumento y un separador
+	\textbf{#1:}  &
+	% Verifica si el segundo argumento contiene un símbolo de correo electrónico
+	\IfSubStr{#2}{@}{\href{mailto:#2}{#2}}{%
+		% Verifica si el segundo argumento contiene '.com' o '.pe'
+		\IfSubStr{#2}{.com}{\href{#2}{\url{#2}}}{%
+			\IfSubStr{#2}{.pe}{\href{#2}{\url{#2}}}{#2}%
+		}
+	} \\
+	% Verifica si el tercer argumento está vacío, si no, verifica si es un correo electrónico o una URL y lo formatea como un enlace
+	\ifx\empty#3\else & 
+	\IfSubStr{#3}{@}{\href{mailto:#3}{#3}}{%
+		\IfSubStr{#3}{.com}{\href{#3}{\url{#3}}}{%
+			\IfSubStr{#3}{.pe}{\href{#3}{\url{#3}}}{#3}%
+		}
+	} \\ 
+	\fi
+}
+
+\newcommand{\noObjetivo}{
+
+}
+
+\newlength{\mySpaceTask}
+\setlength{\mySpaceTask}{0.3889em} % denota 7/18, es decir \:\,  0.3889em 4+3/18
+\newcommand{\task}[1]{%
+	%\hspace{\mySpaceTask} 
+	
+	\begin{minipage}{0.2cm} 
+		\:
+	\end{minipage}
+	\begin{minipage}{\mySpaceTask} 
+			\textbullet
+	\end{minipage}
+	\begin{minipage}{\dimexpr\textwidth-\mySpaceTask-2cm\relax}
+	 #1
+	\end{minipage}
+
+}
+
+\newcommand{\taskV}[1]{%
+	%\hspace{\mySpaceTask} 
+	
+	\begin{minipage}{0.2cm} 
+		\:
+	\end{minipage}
+	\begin{minipage}{\mySpaceTask} 
+		\,
+	\end{minipage}
+	\begin{minipage}{\dimexpr\textwidth-\mySpaceTask-2cm\relax}
+		#1
+	\end{minipage}
+	
+}
+
+
+	%\:=4/18
+	%\, =3/18
+\newcommand{\experienciaProyecto}[6]{%
+	\begin{tabular}{p{12.4cm}p{3cm}}
+		\textbf{#1} &\\
+		#2 & #3 - \\
+		\ifx#5\noObjetivo
+		\else
+		\textbf{Objetivo: } #5 & #4\\
+		\fi
+	\end{tabular} 
+	
+	\medskip
+	#6
+	\vspace{0.5cm}
+}
+\newcommand{\experienciaProyectoV}[6]{%
+	\begin{tabular}{p{9.6cm}p{4.4cm}}
+		\textbf{#1} &\\
+		\textbf{#2} & \hfill #3 - #4
+	\end{tabular}
+	
+	\ifx#5\noObjetivo
+	\else
+	\begin{tabular}{p{15.4cm}}
+		\textbf{Objetivo: } #5
+	\end{tabular} 
+	\fi
+	
+	\smallskip
+	#6
+	\vspace{0.5cm}
+}
+ 
+ 
+\newcommand{\experienciaLaboral}[5]{%
+	\begin{tabular}{p{9.6cm}p{4.4cm}}
+		\textbf{#1} &\\
+		\textbf{#2} & \hfill #3 - #4
+	\end{tabular}
+	
+	\smallskip
+	#5
+	\vspace{0.5cm}
+}
+
+
+
+\newcommand{\voluntariadoAcademico}[5]{%
+	\begin{tabular}{p{9.6cm}p{4.4cm}}
+		\textbf{#1} &\\
+		\textbf{#2} & \hfill #3 - #4
+	\end{tabular}
+	
+	\smallskip
+	\,\: #5
+	\vspace{0.2cm}
+	
+}
+
+
+
+\newcommand{\competenciasDigitales}[1]{%
+	\begin{tabular}{p{5cm}p{10cm}}
+		#1
+	\end{tabular}
+}
+\newcommand{\habilidadesPersonales}[1]{%
+	\begin{tabular}{p{5cm}p{10cm}}
+		#1
+	\end{tabular}
+}
+\newcommand{\idiomas}[1]{%
+	\begin{tabular}{p{4cm}p{12cm}}
+		#1
+	\end{tabular}
+}
+\newcommand{\taskC}[2]{% 
+	\textbullet	\ #1: & #2\\
+}

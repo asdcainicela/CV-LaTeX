@@ -1,0 +1,121 @@
+% Copyright 2023 Gerald Brandi Cainicela Aquino. 
+% Todos los derechos reservados. 
+% Contacto: gerald.cainicela.a@gmail.com
+
+\input{asset/packages.tex} 
+%---cambiar acorde a tus datos
+\newcommand{\myName}{Aqui va el Nombre}
+\newcommand{\myDegree}{Lo que estudioo estudié}
+\newcommand{\perfil}{asset/img/perfil.png} % en aqui va el perfil, debe ir a ese directorio
+%---
+\input{asset/settings.tex}
+\begin{document}
+	 
+	%\justify %justificar 
+	%\pagecolor{gray!5} % Cambia el color de fondo aquí
+
+	\miTitulo{
+		Soy una persona apasionada por la innovación y la tecnología, con sólida formación académica y habilidades en resolución de problemas, trabajo en equipo y liderazgo. Soy proactivo y adaptable a nuevos desafíos. Busco contribuir al desarrollo tecnológico y crecer profesionalmente en una empresa líder en ingeniería.
+		}{true} % 	true: si tiene alguna foto
+				%	false: no tienes ninguna foto
+
+	\datosPersonalesSec{
+		\datosPersonales{Correo(s)}{correo1@example.com}{correo2@example.com}
+		\datosPersonales{N° Celular(es)}{987654321}{987654321}
+		\datosPersonales{LinkedIn}{www.linkedin.com/in/gerald-cainicela}{}
+		\datosPersonales{GitHub}{https://github.com/asdcainicela}{}
+	}
+
+	\section*{Formación Académica}
+	
+		\formacionAcademica
+		{Universidad Nacional de Ingeniería}
+		{Egresado en \myDegree}
+		{Quinto Superior}
+		{03/2019}{7/2023} %fecha de inicio y fin respectivamente
+
+	\section*{Experiencia Laboral}
+		\experienciaLaboral
+		{Mining Mechatronick}
+		{Ingeniero de Control y Automatización}
+		{01/08/2023}{Actualidad}
+		{
+			\task{Encargado del desarrollo de proyectos de automatización para maquinaria utilizada en minería subterránea, brindando soluciones innovadoras y eficientes para optimizar los procesos en este entorno exigente. }
+			\task{Experto en programación de HMI's, controladores y gateways IoT mediante el uso de CoDeSys 3.5, proporcionando interfaces amigables y funcionales para nuestros clientes y garantizando la integración de los dispositivos en nuestros proyectos. }
+			\task{Proveer un soporte técnico especializado para los dispositivos de automatización ofrecidos por la empresa, asegurando un acompañamiento integral a nuestros clientes durante todas las etapas de implementación y mantenimiento, y garantizando su satisfacción con nuestros productos y servicios.}
+		}
+
+		\experienciaLaboral{Nombre de la Empresa}
+		{Rol en la empresa}
+		{Inicio}{Final}
+		{
+			\task{Tareas o actividades que desarrollabas en la empresa}
+			\task{Tareas o actividades que desarrollabas en la empresa}
+		}
+
+
+	\section*{Experiencia en Proyectos}
+
+		\experienciaProyectoV
+		{Organización}
+		{Rol o función}
+		{inicio}{final}
+		{Objetivo} % si no tiene ningún objetivo, debe poner \noObjetivo
+		{
+			\task{Tarea o actividad 1} 
+			\task{Tarea o actividad 1} 
+			\task{Tarea o actividad 1} 
+		}
+
+		\experienciaProyectoV{Wayta Wayra, UNI, UNIFIM, CEDIME}
+		{Director de Proyecto}
+		{04/07/2023}{Actualidad}
+		{Diseño y Desarrollo de Aerogeneradores Savonius para la Recarga de Bicicletas y Vehículos Eléctricos, así como para la Mejora de la Iluminación Pública en las Avenidas Principales de Lima. }
+		{
+			\task{Participación en el diseño y construcción de la tarjeta electrónica CubeSat}
+			\task{Utilización de herramientas como CAE (Computer-Aided Engineering) y CAD (Computer-Aided Design) con SolidWorks y Ansys. }
+			\task{Coordinación con los equipos multidisciplinarios para asegurar la optimización del rendimiento y la eficiencia energética. }
+			\task{Colaboración y comunicación efectiva con los equipos internos y stakeholders para cumplir con los objetivos planteados.}
+		} 
+		
+	
+	\section*{Voluntariado Académico}
+		\voluntariadoAcademico{Organización}{Función o rol}{inicio}{fin}
+		{que hiciste, una breve descripción}
+		\voluntariadoAcademico{UNI - RA OPT-FIM }{Tutor}{03/2023}{07/2023}
+		{Elaboración de material de estudio y dictado de clases de Cálculo Integral para estudiantes en riesgo académico.}
+
+	
+	\section*{Competencias Digitales}
+		\competenciasDigitales{
+			\taskC{Rama principal}{Secundarias}
+			\taskC{ Herramientas de Microsoft Office}{Excel, Power BI, Power Query, Word, PowerPoint, Microsoft Teams}
+			\taskC{Lenguajes de Programación}{Matlab, C, C++, Python, Java }
+			\taskC{Composición de Documentos}{\LaTeX}
+		}
+	
+
+	
+	\section*{Habilidades Personales}
+		\habilidadesPersonales{
+			\taskC{Adaptabilidad:}{ Flexibilidad para enfrentar desafíos y ajustarse a cambios.}
+			\taskC{Comunicación efectiva}{Capacidad para transmitir ideas y conceptos de manera clara y concisa.} 
+			\taskC{Innovación y Creatividad:}{ Capacidad para generar ideas originales y soluciones creativas.} 
+			\taskC{Liderazgo y Capacidad de Gestión:}{Experiencia en guiar equipos hacia el logro de objetivos.} 
+			\taskC{ Relaciones Interpersonales:}{ Competencia en establecer y mantener relaciones efectivas.} 
+			\taskC{Organización:}{ Habilidad para planificar y coordinar tareas de manera efectiva.}
+			\taskC{Pensamiento Analítico:}{ Capacidad para descomponer problemas y tomar decisiones informadas. }
+			\taskC{Resiliencia:}{antener calma y productividad bajo presión. }
+			\taskC{Resolución de Problemas:}{Habilidad para analizar situaciones complejas y generar soluciones efectivas. }
+			\taskC{Toma de Decisiones: }{Capacidad para evaluar opciones y tomar decisiones informadas. }
+			\taskC{Trabajo Bajo Presión: }{Habilidad para mantener el enfoque y la eficiencia en situaciones desafiantes. }
+			\taskC{Trabajo en Equipo: }{Colaborar en equipos multidisciplinarios para lograr objetivos comunes. }
+		}
+ 
+	\section*{Idiomas}
+		\idiomas{
+			\taskC{Idioma}{ Nivel}
+			\taskC{Español}{ Nativo }
+			\taskC{Inglés}{ Intermedio }
+		}
+\end{document}
