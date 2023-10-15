@@ -26,7 +26,7 @@ Debes instalar todos los paquetes necesario para la correcta compilación.
    ```bash
    git clone https://github.com/asdcainicela/CV-LaTeX.git
     ```
-## Guia
+## Guía
 1. Encontrarás un archivo llamado myCV-gbca.tex , es mi CV personal que está de ejemplo.
 2. En el preámbulo de main.tex, hay un yourName, es donde debes escribir tu nombre, lo mismo para \myDegree. 
     ```bash
