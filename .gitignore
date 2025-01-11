@@ -1,0 +1,7 @@
+ #Latex or Tex
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+IEC61131-3.pdf
